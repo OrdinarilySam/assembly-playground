@@ -1,0 +1,9 @@
+services:
+  asm:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: assembly
+    volumes:
+      - .:/lab
+    tty: true
