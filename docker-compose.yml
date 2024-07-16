@@ -1,9 +1,14 @@
 services:
   asm:
+    image: armv7/alpine:latest
     build:
       context: .
       dockerfile: Dockerfile
     container_name: assembly
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
     volumes:
       - .:/lab
     tty: true
